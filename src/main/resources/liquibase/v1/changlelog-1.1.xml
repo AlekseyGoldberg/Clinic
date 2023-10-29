@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+
+    <changeSet id="create table" author="aleksey">
+        <createTable tableName="t_role">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="role" type="varchar(255)"/>
+        </createTable>
+        <insert tableName="t_role">
+            <column name="role" value="DEFAULT"/>
+        </insert>
+        <insert tableName="t_role">
+            <column name="role" value="ADMIN"/>
+        </insert>
+        <createTable tableName="t_user">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="username" type="varchar(255)"/>
+            <column name="hash_password" type="varchar(255)"/>
+            <column name="role_id" type="bigint">
+                <constraints foreignKeyName="user_role_fk"
+                             references="t_role(id)"/>
+            </column>
+        </createTable>
+        <createTable tableName="t_competence">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name_competence" type="varchar(255)"/>
+        </createTable>
+        <createTable tableName="t_doctor">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="user_id" type="bigint">
+                <constraints nullable="false"
+                             foreignKeyName="doctor_user_fk"
+                             references="t_user(id)"/>
+            </column>
+            <column name="competence_id" type="bigint">
+                <constraints nullable="false"
+                             foreignKeyName="doctor_competence_fk"
+                             references="t_competence(id)"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="t_schedule">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="doctor_id" type="bigint">
+                <constraints
+                        nullable="false"
+                        foreignKeyName="schedule_doctor_fk"
+                        references="t_doctor(id)"/>
+            </column>
+            <column name="client_id" type="bigint">
+                <constraints
+                        nullable="false"
+                        foreignKeyName="client_user_fk"
+                        references="t_user(id)"/>
+            </column>
+            <column name="date" type="timestamp"/>
+        </createTable>
+
+        <insert tableName="t_competence">
+            <column name="name_competence" value="dentist"></column>
+        </insert>
+        <insert tableName="t_competence">
+            <column name="name_competence" value="surgeon"></column>
+        </insert>
+        <insert tableName="t_competence">
+            <column name="name_competence" value="ophthalmologist"></column>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

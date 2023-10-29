@@ -1,0 +1,30 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        default_schema: clinic
+#        format_sql: true
+#        show_sql: true
+
+  datasource:
+    url: jdbc:postgresql://localhost:55001/postgres
+    username: postgres
+    password: postgrespw
+    driver-class-name: org.postgresql.Driver
+    dbcp2:
+      default-schema: clinic
+    currentSchema: clinic
+
+  liquibase:
+    enabled: true
+    change-log: classpath:/liquibase/changelog-file.xml
+    liquibase-schema: clinic
+    default-schema: clinic
+
+logging:
+  level:
+    root: INFO
