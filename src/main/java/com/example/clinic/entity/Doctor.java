@@ -25,6 +25,6 @@ public class Doctor {
     @JoinColumn(name = "competence_id", referencedColumnName = "id")
     private Competence competence;
 
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "doctor")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "doctor")
     private List<Schedule> schedules;
 }

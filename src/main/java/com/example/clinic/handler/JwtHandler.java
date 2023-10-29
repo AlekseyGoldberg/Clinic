@@ -9,13 +9,10 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.stereotype.Component;
 
 import javax.crypto.spec.SecretKeySpec;
-import java.math.BigInteger;
 import java.security.Key;
-import java.security.MessageDigest;
 import java.time.temporal.ChronoUnit;
 import java.util.Base64;
 import java.util.Date;
-import java.util.Objects;
 import java.util.UUID;
 
 import static java.time.Instant.now;
