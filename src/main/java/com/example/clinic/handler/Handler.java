@@ -1,6 +1,6 @@
 package com.example.clinic.handler;
 
-import com.example.clinic.message.SimpleMessage;
+import com.example.clinic.text.SimpleMessage;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;

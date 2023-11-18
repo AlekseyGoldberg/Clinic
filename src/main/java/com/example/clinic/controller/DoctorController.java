@@ -2,7 +2,7 @@ package com.example.clinic.controller;
 
 import com.example.clinic.dto.DoctorDto;
 import com.example.clinic.dto.ScheduleDto;
-import com.example.clinic.message.LoggingMessage;
+import com.example.clinic.text.LoggingMessage;
 import com.example.clinic.service.DoctorService;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;

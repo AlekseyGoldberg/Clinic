@@ -1,7 +1,7 @@
 package com.example.clinic.handler;
 
 import com.example.clinic.dto.UserDto;
-import com.example.clinic.message.SimpleMessage;
+import com.example.clinic.text.SimpleMessage;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;

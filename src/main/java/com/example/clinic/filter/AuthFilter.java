@@ -1,7 +1,7 @@
 package com.example.clinic.filter;
 
 import com.example.clinic.handler.JwtHandler;
-import com.example.clinic.message.SimpleMessage;
+import com.example.clinic.text.SimpleMessage;
 import com.example.clinic.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

@@ -1,4 +1,4 @@
-package com.example.clinic.message;
+package com.example.clinic.text;
 
 public class SimpleMessage {
     public static String ID = "id";

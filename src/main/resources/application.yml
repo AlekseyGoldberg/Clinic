@@ -10,6 +10,14 @@ spring:
   #        format_sql: true
   #        show_sql: true
 
+  kafka:
+    bootstrap-servers: localhost:29092
+    producer:
+      retries: 0
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      acks: all
+
   datasource:
     url: jdbc:postgresql://localhost:55001/postgres
     username: postgres
@@ -28,3 +36,11 @@ spring:
 logging:
   level:
     root: INFO
+
+app:
+  kafka:
+    producer:
+      topic: status_schedule_topic
+
+server:
+  port: 8081

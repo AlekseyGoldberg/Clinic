@@ -2,7 +2,7 @@ package com.example.clinic.service;
 
 import com.example.clinic.entity.Role;
 import com.example.clinic.exception.CommonBaseException;
-import com.example.clinic.message.ExceptionMessage;
+import com.example.clinic.text.ExceptionMessage;
 import com.example.clinic.repository.RoleRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

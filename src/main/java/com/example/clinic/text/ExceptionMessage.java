@@ -1,4 +1,4 @@
-package com.example.clinic.message;
+package com.example.clinic.text;
 
 public class ExceptionMessage {
     public static String USER_EXIST_WITH_USERNAME = "User exist with username:";

@@ -1,7 +1,7 @@
 package com.example.clinic.controller;
 
 import com.example.clinic.dto.UserDto;
-import com.example.clinic.message.LoggingMessage;
+import com.example.clinic.text.LoggingMessage;
 import com.example.clinic.service.UserService;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
